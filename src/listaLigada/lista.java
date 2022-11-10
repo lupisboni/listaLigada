@@ -8,18 +8,20 @@ package listaLigada;
  *
  * @author guada
  */
-public class lista {
+public class lista <T>{
 
 private Nodo head;//Apuntador a la cabecera de la lista (primer nodo)
     private Nodo tail;//Apuntador a la cola de la lista (ultimo nodo)
     private Nodo actual;//Apuntador al nodo seleccionado actualmente
-    private int size;//tamaño de la lista (numero de nodos en la lista)
+    private int size;//tamaño de la lista (numero de nodos en la lista){
+
 
     public lista() {
         this.head = null;
         this.actual = null;
         this.tail = null;
         this.size = 0;
+        
     }
 /*
     public void addFirst(int dato) {
@@ -30,7 +32,7 @@ private Nodo head;//Apuntador a la cabecera de la lista (primer nodo)
         this.size++;
     }
 */
-    public void add(int dato) {
+    public void add(T dato) {
         Nodo nuevoNodo = new Nodo(dato);
         this.size++;
         tail = nuevoNodo;//Se mueve el apuntador al ultimo nodo
@@ -47,7 +49,7 @@ private Nodo head;//Apuntador a la cabecera de la lista (primer nodo)
         actual = nuevoNodo;//Ahora actual es el nuevo nodo
     }
     
-    public void add(int dato, int posicion){//mismo nombre diferentes datos 
+    public void add(T dato, int posicion){//mismo nombre diferentes datos 
         Nodo nuevoNodo = new Nodo(dato);
         int i=1;
         actual =head;
@@ -66,12 +68,24 @@ private Nodo head;//Apuntador a la cabecera de la lista (primer nodo)
         int posicion = 1;
         actual = head;//es la cabecera
         while(actual != null){//mientras actual no sea nulo avanza un nodo
-            int elemento = actual.getDato();
+            T elemento = (T)actual.getDato();
             System.out.println("Dato = " + elemento + " almacenado en nodo: " + posicion);//actual apunta a "almacenado en nodo"
             actual = actual.getSiguiente();//getSiguiente obtiene el enlace 
             posicion++;
         }
     }
+    //metodo para eliminar inicio
+    public int eliminarInicio(){
+    T elemento= (T)actual.getDato();
+        System.out.println("");
+        if(actual==head){
+            actual=null;
+            head=null;
+        }else{
+            actual=actual.getSiguiente();
+        }
+        return elemento;
+    }  
 }
 
 

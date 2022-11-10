@@ -8,20 +8,20 @@ package listaLigada;
  *
  * @author guada
  */
-public class Nodo {
-   private int dato;//dato almacenado
+public class Nodo <T> {
+   private T dato;//dato almacenado
     private Nodo siguiente;//apuntador al siguiente nodo
     
-        public Nodo(int d){
+        public Nodo(T d){
             this.dato = d;
             this.siguiente = null;
         }
 
-    public int getDato() {
+    public T getDato() {
         return dato;
     }
 
-    public void setDato(int dato) {
+    public void setDato(T dato) {
         this.dato = dato;
     }
 

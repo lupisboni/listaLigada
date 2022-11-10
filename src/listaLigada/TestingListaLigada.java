@@ -36,7 +36,7 @@ public class TestingListaLigada {
                 break;
         }
        
-        
+        //se inserto un dato a una posicion 
         System.out.println("--------------------------------------");
         System.out.println("Contenido de la lista ligada");
         lista.printList();
@@ -49,7 +49,7 @@ public class TestingListaLigada {
         System.out.println("Escriba la posicion en donde quieras insertar:");
         entrada=bufer.readLine();
         int p =Integer.parseInt(entrada);
-        lista.add(dato,p);
+        lista.add(dato,p);//se envia un dato y una posicion para insertar el nodo,permite insertar un nuvo nodo a una posicion
         
         System.out.println("--------------------------------------");
         System.out.println("Contenido de la lista ligada:");
